@@ -5,6 +5,8 @@ int buttonSize = 20;
 int buttonRightX, buttonRightY, buttonLeftX, buttonLeftY;
 int buttonRight01X, buttonRight01Y, buttonRight02X, buttonRight02Y, buttonRight03X, buttonRight03Y, buttonLeft01X, buttonLeft01Y, buttonLeft02X, buttonLeft02Y, buttonLeft03X, buttonLeft03Y;
 int count;
+PImage img;
+
 
 
 void setup() {
@@ -14,17 +16,19 @@ void setup() {
   }
   count = 0;
   size(1280, 720);
-  background(50);
+  //background(50);
+  img = loadImage("clothes02.jpg");
+  background(img);
   smooth();
   //buttonLeftX = 30;
   //buttonLeftY = 300;
   //buttonRightX = width-30;
   //buttonRightY = 300;
-  buttonRight01X = width-70;
+  buttonRight01X = width-150;
   buttonRight01Y = 460;
-  buttonRight02X = width-70;
+  buttonRight02X = width-150;
   buttonRight02Y = 260;
-  buttonRight03X = width-15;
+  buttonRight03X = width-95;
   buttonRight03Y = 360;
   
   buttonLeft01X = 70;
@@ -37,10 +41,10 @@ void setup() {
 
 void draw() {
   update(mouseX, mouseY); 
-  background(50);
+  background(img);
   triangle(buttonRight01X, buttonRight01Y, buttonRight02X, buttonRight02Y, buttonRight03X, buttonRight03Y);
   triangle(buttonLeft01X, buttonLeft01Y, buttonLeft02X, buttonLeft02Y, buttonLeft03X, buttonLeft03Y);
-  image(tshirt[count], width/2-300, height/2-300);
+  image(tshirt[count], width/2-340, height/2-300);
   noStroke();
   //triangle(30, 225, 30, 170, 15, 197);
   //triangle(width-30, 225, width-30, 170, width-15, 197);
